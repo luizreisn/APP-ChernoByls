@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-interface Dados{
+export interface Dados{
   id: number;
   nome: string;
   telefone: number;
