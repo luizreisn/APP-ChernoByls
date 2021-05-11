@@ -72,15 +72,15 @@ export class LoginPage{
         type: 'email',
         placeholder: 'Digite seu E-Mail'
       }],
-      buttons: [
-        'Cancelar',
-        {
-          text: 'Confirmar',
-          handler: (alertData) => {
-            console.log('email:', alertData.email);
-          }
+      buttons: [{
+        text: 'Cancelar'
+      },
+      {
+        text: 'Confirmar',
+        handler: (alertData) => {
+          console.log('email:', alertData.email);
         }
-      ]
+      }]
     });
     await alert.present();
   }
