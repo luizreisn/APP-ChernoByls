@@ -60,7 +60,7 @@ export class LoginPage{
       duration: 1000
     });
     await loading.present();
-    this.rota.navigate(['home']);
+    this.rota.navigate(['home', this.novoUsuario.id]);
   }
 
   public async alertaSenha(){
