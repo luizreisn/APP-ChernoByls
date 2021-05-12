@@ -18,7 +18,7 @@
   <ion-card color="primary" class="ion-text-center cardEndereco">
     <ion-card-subtitle>Entrgar em:</ion-card-subtitle>
     <ion-card-title>{{usuario.dadosEndereco.endereco}} {{usuario.dadosEndereco.numero}}</ion-card-title>
-    <ion-button [routerLink]="['']">
+    <ion-button [routerLink]="['/endereco', usuario.id]">
       <ion-text>Trocar Endereco</ion-text>
     </ion-button>
   </ion-card>
@@ -76,7 +76,7 @@
   <ion-content class="itemsMenu">
     <ion-list>
       <ion-menu-toggle>
-        <ion-item [routerLink]="['']" *ngFor="let opcao of opcoesMenu">
+        <ion-item [routerLink]="['/', opcao.id, usuario.id]" *ngFor="let opcao of opcoesMenu">
           <ion-icon slot="start" [name]="opcao.icon"></ion-icon>
           <ion-label>{{opcao.nome}}</ion-label>
         </ion-item>
