@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'endereco',
     loadChildren: () => import('./endereco/endereco.module').then( m => m.EnderecoPageModule)
+  },  {
+    path: 'menus',
+    loadChildren: () => import('./menus/menus.module').then( m => m.MenusPageModule)
   },
+
 ];
 
 @NgModule({
