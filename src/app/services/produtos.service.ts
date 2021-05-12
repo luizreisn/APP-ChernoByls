@@ -51,7 +51,7 @@ export class ProdutosService {
       ]
     },{
       id: 'celsio137',
-      categoria: 'pratoCarne',
+      categoria: 'lancheCarne',
       nome: 'Celsio 137',
       descricao: 'Nosso monstro Brasileiro, verdadeiramente delicioso. Contém pão francês, hamburger de linguiça, vinagrete, batata palha e maionese temperada.',
       valor: 28.00,
