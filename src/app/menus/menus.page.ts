@@ -36,4 +36,9 @@ export class MenusPage{
     return this.produtosFiltrados
   }
 
+  public darFavorito(produto: Produto){
+    this.produtosService.darFavorito(produto);
+    console.log(produto);
+  }
+
 }
