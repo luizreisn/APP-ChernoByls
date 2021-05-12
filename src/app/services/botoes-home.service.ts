@@ -86,7 +86,7 @@ export class BotoesHomeService {
       nome: 'Pedidos Anteriores',
       icon: 'clipboard-outline'
     },{
-      id: 'favorito',
+      id: 'favoritos',
       nome: 'Favoritos',
       icon: 'heart'
     },{
