@@ -37,9 +37,9 @@ export class HomePage {
   constructor(private dadosService: DadosService,
               private botaoHome: BotoesHomeService,
               private produtosService: ProdutosService,
-              private route: ActivatedRoute,
               private alerta: AlertController,
-              private rota: Router) {
+              private rota: Router,
+              route: ActivatedRoute) {
     const id = +route.snapshot.paramMap.get('id');
     this.usuario = dadosService.getUsuarioId(id);
   }
