@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Produto, ProdutosService } from './produtos.service';
 
 export interface Dados{
   id: number;
