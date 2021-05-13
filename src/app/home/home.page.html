@@ -62,7 +62,7 @@
 <ng-template #focarPesquisa>
   <ion-content>
     <ion-list>
-      <ion-item lines="full" *ngFor="let produto of produtos" [routerLink]="['/produtos', produto.id, usuario.id]">
+      <ion-item lines="full" *ngFor="let produto of produtosFiltrados" [routerLink]="['/produtos', produto.id, usuario.id]">
         <ion-label color="primary" class="listaBusca">
           <ion-text>{{produto.nome}}</ion-text>
           <h3>{{produto.valor | currency: 'BRL'}}</h3>

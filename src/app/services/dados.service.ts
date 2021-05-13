@@ -15,7 +15,7 @@ export interface Dados{
     endereco: string;
     numero: number;
     complemento: string;
-  }
+  } 
 }
 
 @Injectable({
@@ -29,7 +29,7 @@ export class DadosService {
   constructor() { }
 
   public getUsuarioId(id: number){
-    return { ...this.usuarios.find(u => u.id === id)};
+    return JSON.parse(JSON.stringify(this.usuarios.find(u => u.id === id)));
   }
 
   public cadastrarUsuario(usuarioNovo: Dados){
