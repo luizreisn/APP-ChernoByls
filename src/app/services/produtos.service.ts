@@ -71,8 +71,5 @@ export class ProdutosService {
     return { ...this.produtos.find(p => p.id === id)}
   }
 
-  public darFavorito(produto: Produto){
-    produto.favorito = !produto.favorito
-  }
 
 }

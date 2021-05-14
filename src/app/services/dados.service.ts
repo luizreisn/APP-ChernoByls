@@ -15,7 +15,8 @@ export interface Dados{
     endereco: string;
     numero: number;
     complemento: string;
-  } 
+  };
+  produtosFavoritos: string [];
 }
 
 @Injectable({
@@ -40,6 +41,18 @@ export class DadosService {
   public atualizarUsuario(usuarioAtualizado: Dados){
     const index = this.usuarios.findIndex(u => u.id === usuarioAtualizado.id);
     this.usuarios[index] = usuarioAtualizado;
+  }
+
+  public atualizarFavorito(produto: Produto, id: number){
+    const usuario = this.usuarios.find(u => u.id === id);
+    if(usuario.produtosFavoritos.find(p => p === produto.id)){
+      const index = usuario.produtosFavoritos.findIndex(p => p === produto.id);
+      usuario.produtosFavoritos.splice(index, 1)
+      console.log('Tirar Favorito',usuario.produtosFavoritos)
+    }else{
+      usuario.produtosFavoritos.push(produto.id)
+      console.log('Favorito', usuario.produtosFavoritos)
+    }
   }
 
   public sair(id: number){
