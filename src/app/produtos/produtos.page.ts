@@ -26,9 +26,8 @@ export class ProdutosPage {
     this.usuario = dadosService.getUsuarioId(id);
   }
 
-  public darFavorito(produto: Produto){
-    this.produtosService.darFavorito(produto)
-    console.log(produto)
+  public favoritar(produto: Produto){
+    this.dadosService.atualizarFavorito(produto, this.usuario.id)
   }
 
 }

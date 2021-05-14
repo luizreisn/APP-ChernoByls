@@ -26,7 +26,8 @@ export class LoginPage{
       endereco: '',
       numero: null,
       complemento: ''
-    }
+    },
+    produtosFavoritos: []
   }
 
   constructor(private dadosService: DadosService,

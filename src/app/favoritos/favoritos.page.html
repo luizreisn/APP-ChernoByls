@@ -31,7 +31,7 @@
             <p>{{produto.valor | currency:'BRL'}}</p>
           </ion-row>
           <ion-row>
-            <ion-button class="botaoFavorito" fill="clear" size="small" (click)="darFavorito(produto)" [color]="produto.favorito? 'danger' : 'primary'">
+            <ion-button class="botaoFavorito" fill="clear" size="small" (click)="favoritar(produto)" [color]="produto.favorito? 'danger' : 'primary'">
               <ion-icon slot="icon-only" [name]="produto.favorito? 'heart' : 'heart-outline'"></ion-icon>
             </ion-button>
           </ion-row>
