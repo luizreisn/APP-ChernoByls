@@ -24,12 +24,12 @@ export class FavoritosPage {
   }
 
   public filtrarFavoritos(){
-    this.produtosFavoritos =  this.produtos.filter(p => p.favorito === true);
-    return this.produtosFavoritos;
+    const p = this.produtos.filter(produto => this.usuario.produtosFavoritos.includes(produto.id))
+    return p;
   }
 
   public favoritar(produto: Produto){
-    this.dadosService.atualizarFavorito(produto, this.usuario.id)
+    this.dadosService.atualizarFavorito(produto, this.usuario.id);
   }
 
 }
