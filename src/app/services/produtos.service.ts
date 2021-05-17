@@ -6,7 +6,6 @@ export interface Produto{
   nome: string;
   descricao;
   valor: number;
-  favorito: boolean;
   imagem: string;
   condimentos: {
     nome: string;
@@ -26,7 +25,6 @@ export class ProdutosService {
       nome: 'X-Radiação',
       descricao: 'Hamburguer diretamente de chernobyl, radiação pura. Contém pão, hamburger bolvino, cheddar, maionese temperada, cebola caramelizada, bacon e nosso molho especial.',
       valor: 25.00,
-      favorito: false,
       imagem: '/assets/img/xRadiacao.png',
       condimentos: [
         {nome: 'Sem Cheddar', marcado: false},
@@ -41,7 +39,6 @@ export class ProdutosService {
       nome: 'Cherno & Byls´s',
       descricao: 'Como o proprio nome diz, nosso carro chefe, é um verdadeiro monstro. Contém pão de brioche, 2 hamburgers bolvinos, queijo suíço, onion rings, molho barbecue e maionese da casa.',
       valor: 30.00,
-      favorito: false,
       imagem: '/assets/img/xRadiacao.png',
       condimentos: [
         {nome: 'Sem Queijo Suíço', marcado: false},
@@ -55,7 +52,6 @@ export class ProdutosService {
       nome: 'Celsio 137',
       descricao: 'Nosso monstro Brasileiro, verdadeiramente delicioso. Contém pão francês, hamburger de linguiça, vinagrete, batata palha e maionese temperada.',
       valor: 28.00,
-      favorito: false,
       imagem: '/assets/img/xRadiacao.png',
       condimentos: [
         {nome: 'Sem Vinagrete', marcado: false},
