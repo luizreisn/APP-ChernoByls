@@ -15,7 +15,7 @@ export class PerfilPage{
   constructor(private dadosService: DadosService,
               private alerta: AlertController,
               private toast: ToastController,
-              private route: ActivatedRoute,) { 
+              route: ActivatedRoute,) { 
     const id = +route.snapshot.paramMap.get('id');
     this.usuario = dadosService.getUsuarioId(id);
   }
