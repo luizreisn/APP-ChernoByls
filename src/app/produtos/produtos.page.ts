@@ -17,6 +17,10 @@ export class ProdutosPage {
 
   public produto;
 
+  public quantidade = 1;
+
+  public valorTotal: number;
+
   constructor(private produtosService: ProdutosService,
               private dadosService: DadosService,
               route: ActivatedRoute) { 
@@ -24,10 +28,37 @@ export class ProdutosPage {
     this.produto = produtosService.getProdutoId(produtoid);
     const id = +route.snapshot.paramMap.get('id');
     this.usuario = dadosService.getUsuarioId(id);
+    this.atualizarValor();
   }
 
   public favoritar(produto: Produto){
     this.dadosService.atualizarFavorito(produto, this.usuario.id)
   }
 
+  public adicionar(){
+    this.quantidade++;
+    this.atualizarValor();
+  }
+
+  public retirar(){
+    if(this.quantidade <= 1){
+      return;
+    }else{
+      this.quantidade--;
+      this.atualizarValor();
+    }
+  }
+
+  public atualizarValor(){
+    this.valorTotal = this.produto.valor * this.quantidade;
+  }
+
+  public adicionarProd(){
+    console.log(this.produto, this.valorTotal, this.quantidade)
+    this.quantidade = 1;
+    this.atualizarValor();
+  }
+
+
 }
+
