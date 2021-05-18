@@ -17,6 +17,11 @@ export interface Dados{
     complemento: string;
   };
   produtosFavoritos: string [];
+  carrinho: {
+    id: string;
+    quantidade: number;
+    valorTotal: number;
+  }[]
 }
 
 @Injectable({
@@ -53,6 +58,13 @@ export class DadosService {
       usuario.produtosFavoritos.push(produto.id)
       console.log('Favorito', usuario.produtosFavoritos)
     }
+  }
+
+  public adicionarCarrinho(id: number, prodId: string, quant: number, vTotal: number){
+    const usuario = this.usuarios.find(u => u.id === id);
+    usuario.carrinho.push({'id': prodId, 'quantidade': quant, 'valorTotal': vTotal})
+    console.log(usuario.carrinho
+    )
   }
 
   public sair(id: number){

@@ -54,6 +54,8 @@ export class ProdutosPage {
   }
 
   public adicionarProd(){
+    this.dadosService.adicionarCarrinho(this.usuario.id, this.produto.id, 
+                                        this.quantidade, this.valorTotal)
     console.log(this.produto, this.valorTotal, this.quantidade)
     this.quantidade = 1;
     this.atualizarValor();
