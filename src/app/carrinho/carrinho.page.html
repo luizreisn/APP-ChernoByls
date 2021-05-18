@@ -14,11 +14,11 @@
 
 <ion-content>
   <ion-card color="primary" class="ion-text-center quantidadeProdutos">
-    <ion-text>Existem ... produtos no seu carrinho</ion-text>
+    <ion-text>Existem {{usuario.carrinho.length}} produtos no seu carrinho</ion-text>
   </ion-card>
 
   <ion-list>
-    <ion-item lines="full" [routerLink]="">
+    <ion-item lines="full">
       <ion-row>
         <ion-col size="83px" class="imagemProduto">
           <ion-card class="ion-no-margin">
@@ -34,7 +34,7 @@
             <p></p>
           </ion-row>
           <ion-row>
-            <ion-button>
+            <ion-button class="botaoExcluir">
               <ion-icon name="trash-outline"></ion-icon>
               Excluir
             </ion-button>

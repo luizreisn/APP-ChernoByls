@@ -12,8 +12,6 @@ export class FavoritosPage {
 
   public produtos: Produto[] = this.produtosService.produtos;
 
-  public produtosFavoritos = this.produtos;
-
   public usuario: Dados;
 
   constructor(private produtosService: ProdutosService,
