@@ -51,7 +51,7 @@
   <h4 class="valores">Frete:</h4>
   <h1 class="valores total">Total:</h1>
 
-  <ion-button expand="block" class="confirmarPagamento">
+  <ion-button [disabled]="usuario.carrinho.length === 0" expand="block" class="confirmarPagamento">
     Confirmar Pagamento
   </ion-button>
 </ion-footer>
