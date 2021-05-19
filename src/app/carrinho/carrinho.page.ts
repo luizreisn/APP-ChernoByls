@@ -21,4 +21,9 @@ export class CarrinhoPage{
     this.usuario = dadosService.getUsuarioId(id); 
   }
 
+  public excluirDoCarrinho(produto: Produto){
+    this.dadosService.excluirDoCarrinho(this.usuario.id, produto)
+    console.log(this.usuario.carrinho)
+  }
+
 }
