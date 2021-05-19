@@ -17,7 +17,7 @@
     <ion-text>Existem {{usuario.carrinho.length}} produtos no seu carrinho</ion-text>
   </ion-card>
 
-  <ion-list>
+  <ion-list *ngIf="usuario.carrinho.length > 0; else carrinhoVazio">
     <ion-item lines="full" *ngFor="let produto of usuario.carrinho">
       <ion-row>
         <ion-col size="83px" class="imagemProduto">
@@ -55,3 +55,12 @@
     Confirmar Pagamento
   </ion-button>
 </ion-footer>
+
+<ng-template #carrinhoVazio>
+  <ion-text color="medium" class="ion-text-center">
+    <h1>
+      <ion-icon slot="start" name="cart-outline" style="font-size: 2em;"></ion-icon>
+    </h1>
+    <p style="margin: 15px">Você ainda não tem nenhum produto no seu carrinho.</p>
+  </ion-text>
+</ng-template>
