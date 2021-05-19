@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Dados, DadosService } from '../services/dados.service';
-import { MenusEspService } from '../services/menus-esp.service';
 import { Produto, ProdutosService } from '../services/produtos.service';
 
 @Component({
@@ -16,10 +15,6 @@ export class ProdutosPage {
   public usuario: Dados;
 
   public produto;
-
-  public quantidade = 1;
-
-  public valorTotal: number;
 
   constructor(private produtosService: ProdutosService,
               private dadosService: DadosService,
@@ -36,29 +31,37 @@ export class ProdutosPage {
   }
 
   public adicionar(){
-    this.quantidade++;
+    this.produto.quantidade++;
     this.atualizarValor();
   }
 
   public retirar(){
-    if(this.quantidade <= 1){
+    if(this.produto.quantidade <= 1){
       return;
     }else{
-      this.quantidade--;
-      this.atualizarValor();
+      this.produto.quantidade--;
+      this.produto.atualizarValor();
     }
   }
 
   public atualizarValor(){
-    this.valorTotal = this.produto.valor * this.quantidade;
+    this.produto.valorTotal = this.produto.valor * this.produto.quantidade;
   }
 
   public adicionarProd(){
-    this.dadosService.adicionarCarrinho(this.usuario.id, this.produto.id, 
-                                        this.quantidade, this.valorTotal)
-    console.log(this.produto, this.valorTotal, this.quantidade)
-    this.quantidade = 1;
-    this.atualizarValor();
+    this.dadosService.adicionarNoCarrinho(this.usuario.id, this.produto)
+    this.resetarProd()
+  }
+
+  public resetarProd(){
+    this.produto.quantidade = 1
+    this.atualizarValor()
+    this.produto.condimentos.filter( condimento => {
+      if(condimento.marcado === true){
+        condimento.marcado = !condimento.marcado
+      }
+    });
+    console.log(this.produto.condimentos)
   }
 
 

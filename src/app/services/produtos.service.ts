@@ -10,7 +10,9 @@ export interface Produto{
   condimentos: {
     nome: string;
     marcado: boolean;
-  }[]
+  }[];
+  quantidade: number;
+  valorTotal: number;
 }
 
 @Injectable({
@@ -32,7 +34,9 @@ export class ProdutosService {
         {nome: 'Sem Cebola Caramelizada', marcado: false},
         {nome: 'Sem Bacon', marcado: false},
         {nome: 'Sem Molho Especial', marcado: false}
-      ]
+      ],
+      quantidade: 1,
+      valorTotal: 0
     },{
       id: 'cherno&byls',
       categoria: 'lancheCarne',
@@ -45,7 +49,9 @@ export class ProdutosService {
         {nome: 'Sem Onion Rings', marcado: false},
         {nome: 'Sem Molho Barbecue', marcado: false},
         {nome: 'Sem Maionese da Casa', marcado: false}
-      ]
+      ],
+      quantidade: 1,
+      valorTotal: 0
     },{
       id: 'celsio137',
       categoria: 'lancheCarne',
@@ -57,7 +63,9 @@ export class ProdutosService {
         {nome: 'Sem Vinagrete', marcado: false},
         {nome: 'Sem Batata Palha', marcado: false},
         {nome: 'Sem Maionese Temperada', marcado: false}
-      ]
+      ],
+      quantidade: 1,
+      valorTotal: 0
     }
   ]
 
