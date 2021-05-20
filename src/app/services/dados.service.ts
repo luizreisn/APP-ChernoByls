@@ -39,7 +39,9 @@ export class DadosService {
 
   private async carrregarDoStorage(){
     const usuariosCarregados = await this.storage.get('usuarios')
-    this.usuarios.push(...usuariosCarregados)
+    if(usuariosCarregados){
+      this.usuarios.push(...usuariosCarregados)
+    }
   }
 
   public getUsuarioId(id: number){
