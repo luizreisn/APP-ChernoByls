@@ -30,7 +30,7 @@ export class DadosService {
   public usuarios: Dados[] = [];
 
   constructor(private storage: Storage) { 
-    this.carrregarDoStorage()
+    //this.carrregarDoStorage()
   }
 
   private salveNoStorage(){
@@ -52,13 +52,13 @@ export class DadosService {
   public cadastrarUsuario(usuarioNovo: Dados){
     usuarioNovo.id = 1 + Math.max(0, ...this.usuarios.map(u => u.id));
     this.usuarios.push(usuarioNovo);
-    this.salveNoStorage();
+    //this.salveNoStorage();
   }
 
   public atualizarUsuario(usuarioAtualizado: Dados){
     const index = this.usuarios.findIndex(u => u.id === usuarioAtualizado.id);
     this.usuarios[index] = usuarioAtualizado;
-    this.salveNoStorage();
+    //this.salveNoStorage();
   }
 
   public atualizarFavorito(produto: Produto, id: number){
@@ -71,14 +71,14 @@ export class DadosService {
       usuario.produtosFavoritos.push(produto.id)
       console.log('Favorito', usuario.produtosFavoritos)
     }
-    this.salveNoStorage();
+    //this.salveNoStorage();
   }
 
   public adicionarNoCarrinho(id: number, prod: Produto){
     const usuario = this.usuarios.find(u => u.id === id)
     usuario.carrinho.push(JSON.parse(JSON.stringify(prod)))
     console.log(usuario.carrinho)
-    this.salveNoStorage();
+    //this.salveNoStorage();
   }
 
   public excluirDoCarrinho(id: number, prod: Produto){
@@ -86,13 +86,13 @@ export class DadosService {
     const index = usuario.carrinho.indexOf(prod);
     usuario.carrinho.splice(index, 1)
     console.log(usuario.carrinho)
-    this.salveNoStorage();
+    //this.salveNoStorage();
   }
 
   public sair(id: number){
     const index = this.usuarios.findIndex(u => u.id === id);
     this.usuarios.splice(index, 1);
-    this.salveNoStorage();
+    //this.salveNoStorage();
   }
 
 }
